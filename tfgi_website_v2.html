@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour de Force Green Initiative | Ignite Triumph Within</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--fire:#FF6B00;--gold:#F5A623;--sun:#FFD166;--teal:#2EC4B6;--dark:#0D1F1A;--deep:#0A1612;--leaf:#1A4035;--mid:#2D6A4F;--light:#F8F4EE;--muted:rgba(248,244,238,0.6);}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--light);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+button,input,select,textarea{font:inherit;}
+img{display:block;max-width:100%;height:auto;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:200;padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,18,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,107,0,0.15);}
+.nav-logo{display:flex;align-items:center;gap:0.75rem;font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.08em;color:var(--fire);white-space:nowrap;}
+.nav-logo img{width:2rem;height:auto;display:block;border-radius:6px;}
+.nav-logo span{color:var(--teal);}
+nav ul{list-style:none;display:flex;gap:1.6rem;flex-wrap:wrap;align-items:center;}
+.nav-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--light);font-size:1rem;padding:0.65rem 0.85rem;border-radius:4px;cursor:pointer;transition:border-color 0.2s,background 0.2s;}
+.nav-toggle:hover{background:rgba(255,255,255,0.06);border-color:rgba(255,107,0,0.35);}
+nav a{text-decoration:none;color:var(--muted);font-size:0.74rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
+nav a:hover,nav a.active{color:var(--fire);}
+.nav-cta{background:var(--fire)!important;color:#fff!important;padding:0.4rem 1rem;border-radius:3px;}
+
+nav.open ul{display:flex;flex-direction:column;position:absolute;top:100%;left:0;width:100%;background:rgba(10,22,18,0.98);box-shadow:0 16px 40px rgba(0,0,0,0.25);padding:1.5rem 2.5rem;gap:1rem;}
+nav.open ul li{width:100%;}
+nav.open ul li a{display:block;padding:0.75rem 0;}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;overflow:hidden;text-align:center;padding:6rem 2rem 4rem;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 70% at 50% 60%,#FF6B0022 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 20% 20%,#2EC4B610 0%,transparent 60%),linear-gradient(180deg,#0A1612 0%,#0D1F1A 100%);}
+.particles{position:absolute;inset:0;pointer-events:none;}
+.particle{position:absolute;border-radius:50%;animation:float linear infinite;opacity:0;}
+@keyframes float{0%{transform:translateY(100vh) scale(0);opacity:0;}10%{opacity:0.6;}90%{opacity:0.3;}100%{transform:translateY(-20vh) scale(1.5);opacity:0;}}
+.rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(255,107,0,0.08);animation:rpulse 6s ease-in-out infinite;}
+@keyframes rpulse{0%,100%{transform:scale(1);opacity:0.4;}50%{transform:scale(1.05);opacity:0.1;}}
+.hero-badge{display:inline-block;background:rgba(46,196,182,0.12);border:1px solid rgba(46,196,182,0.35);color:var(--teal);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.4rem 1.2rem;border-radius:2rem;margin-bottom:2rem;animation:fadeUp 0.8s ease both;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,11vw,9rem);line-height:0.95;letter-spacing:0.03em;animation:fadeUp 0.8s 0.15s ease both;}
+.hero-title .line1{color:var(--light);display:block;}
+.hero-title .line2{color:transparent;-webkit-text-stroke:2px var(--fire);display:block;}
+.hero-title .line3{color:var(--fire);display:block;}
+.hero-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.4rem);color:var(--muted);margin:1.5rem 0 3rem;animation:fadeUp 0.8s 0.3s ease both;}
+.hero-tagline strong{color:var(--teal);font-style:normal;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 0.8s 0.45s ease both;}
+.btn-primary, .btn-outline, .btn-teal, .nav-toggle, .method-btn, .amount-btn, .cal-nav, .portal-nav-item{transition:background 0.2s,transform 0.2s,border-color 0.2s,color 0.2s;}
+.btn-primary{background:var(--fire);color:#fff;padding:0.9rem 2.4rem;border-radius:3px;text-decoration:none;font-weight:500;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;display:inline-block;}
+.btn-primary:hover{background:#e05800;transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--light);border:1px solid rgba(248,244,238,0.3);padding:0.9rem 2.4rem;border-radius:3px;text-decoration:none;font-weight:500;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;display:inline-block;}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px);}
+.btn-teal{background:var(--teal);color:var(--dark);padding:0.9rem 2.4rem;border-radius:3px;text-decoration:none;font-weight:600;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;display:inline-block;}
+.btn-teal:hover{background:#25a99d;transform:translateY(-2px);}
+.btn-primary:focus-visible, .btn-outline:focus-visible, .btn-teal:focus-visible, .nav-toggle:focus-visible, .method-btn:focus-visible, .amount-btn:focus-visible, .cal-nav:focus-visible, .portal-nav-item:focus-visible, nav a:focus-visible {outline:2px solid var(--teal);outline-offset:4px;}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--muted);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;animation:fadeUp 1s 0.8s ease both;}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--fire),transparent);animation:sp 2s ease-in-out infinite;}
+@keyframes sp{0%,100%{opacity:1;}50%{opacity:0.2;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+/* STATS */
+.stats-bar{background:var(--leaf);border-top:1px solid rgba(255,107,0,0.2);border-bottom:1px solid rgba(255,107,0,0.2);padding:2.5rem 3rem;display:flex;justify-content:space-around;flex-wrap:wrap;gap:2rem;}
+.stat{text-align:center;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--fire);line-height:1;}
+.stat-label{font-size:0.78rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.3rem;}
+
+/* BASE */
+section{padding:6rem 3rem;}
+.section-tag{font-size:0.72rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--teal);margin-bottom:0.8rem;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05;margin-bottom:1.2rem;}
+.section-body{color:var(--muted);font-size:1.05rem;line-height:1.8;max-width:600px;}
+
+/* ABOUT */
+#about{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;background:var(--dark);}
+.about-circle{width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,#FF6B0033 0%,transparent 70%);border:2px solid rgba(255,107,0,0.25);display:flex;align-items:center;justify-content:center;position:relative;margin:0 auto;}
+.about-circle::before,.about-circle::after{content:'';position:absolute;border-radius:50%;border:1px solid rgba(255,107,0,0.12);animation:rpulse 5s ease-in-out infinite;}
+.about-circle::before{inset:-30px;animation-delay:0.5s;}
+.about-circle::after{inset:-60px;animation-delay:1s;}
+.big-text{font-family:'Bebas Neue',sans-serif;font-size:5rem;color:var(--fire);line-height:1;text-align:center;}
+.sub-text{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);font-size:0.9rem;text-align:center;}
+.founded{display:inline-block;background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.25);color:var(--fire);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:2px;margin-bottom:1.5rem;}
+
+/* MISSION */
+#mission{background:var(--deep);}
+.mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:4rem;}
+.mission-card{background:var(--leaf);border:1px solid rgba(46,196,182,0.1);border-radius:4px;padding:2.5rem 2rem;transition:transform 0.25s,border-color 0.25s;position:relative;overflow:hidden;}
+.mission-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--fire),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.mission-card:hover{transform:translateY(-5px);border-color:rgba(46,196,182,0.3);}
+.mission-card:hover::before{transform:scaleX(1);}
+.card-icon{font-size:2.2rem;margin-bottom:1.2rem;}
+.card-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.06em;margin-bottom:0.8rem;}
+.card-body{color:var(--muted);font-size:0.92rem;line-height:1.75;}
+
+/* VALUES */
+#values{background:var(--dark);display:grid;grid-template-columns:1fr 1.5fr;gap:6rem;align-items:start;}
+.values-list{margin-top:2rem;display:flex;flex-direction:column;gap:1.5rem;}
+.value-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem;border:1px solid rgba(255,107,0,0.1);border-radius:4px;background:rgba(255,107,0,0.04);transition:background 0.2s;}
+.value-item:hover{background:rgba(255,107,0,0.1);}
+.value-dot{min-width:36px;height:36px;border-radius:50%;background:var(--fire);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.value-name{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.06em;margin-bottom:0.25rem;}
+.value-desc{color:var(--muted);font-size:0.87rem;line-height:1.6;}
+
+/* IMPACT */
+#impact{background:var(--deep);}
+.impact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.5rem;margin:3rem 0;}
+.impact-card{background:var(--leaf);border:1px solid rgba(255,107,0,0.15);border-radius:6px;padding:2.5rem 1.5rem;text-align:center;position:relative;overflow:hidden;}
+.impact-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(255,107,0,0.07),transparent 70%);pointer-events:none;}
+.impact-icon{font-size:2.5rem;margin-bottom:0.8rem;}
+.impact-count{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--fire);line-height:1;display:block;}
+.impact-label{font-size:0.78rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.3rem;}
+.bar-wrap{background:var(--dark);border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:2rem;}
+.bar-wrap h4{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.06em;margin-bottom:1.5rem;}
+.bar-chart{display:flex;flex-direction:column;gap:1rem;}
+.bar-row{display:flex;align-items:center;gap:1rem;}
+.bar-label{font-size:0.8rem;color:var(--muted);min-width:150px;text-align:right;}
+.bar-track{flex:1;background:rgba(255,255,255,0.06);border-radius:2px;height:10px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--fire),var(--teal));animation:grow 1.5s ease both;}
+@keyframes grow{from{width:0%;}to{}}
+.bar-val{font-size:0.78rem;color:var(--sun);min-width:35px;}
+
+/* PROGRAMS */
+#programs{background:var(--dark);}
+.programs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:4rem;}
+.program-card{border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);transition:transform 0.25s,box-shadow 0.25s;}
+.program-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.4);}
+.program-header{height:150px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.program-body{background:var(--leaf);padding:1.8rem;}
+.program-tag{display:inline-block;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.2rem 0.7rem;border-radius:2px;margin-bottom:0.8rem;}
+.tag-active{background:rgba(46,196,182,0.2);color:var(--teal);border:1px solid rgba(46,196,182,0.3);}
+.tag-planned{background:rgba(255,107,0,0.15);color:var(--fire);border:1px solid rgba(255,107,0,0.3);}
+.tag-ongoing{background:rgba(255,209,102,0.15);color:var(--sun);border:1px solid rgba(255,209,102,0.3);}
+.program-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.05em;margin-bottom:0.6rem;}
+.program-desc{color:var(--muted);font-size:0.88rem;line-height:1.7;margin-bottom:1.2rem;}
+.program-meta{display:flex;gap:1rem;font-size:0.75rem;color:var(--muted);flex-wrap:wrap;}
+
+/* NEWS */
+#news{background:var(--deep);}
+.news-grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem;margin-top:4rem;}
+.news-featured{background:var(--leaf);border-radius:6px;overflow:hidden;border:1px solid rgba(255,107,0,0.15);}
+.news-feat-img{height:240px;background:linear-gradient(135deg,#1A4035,#FF6B0044);display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;}
+.news-feat-cat{position:absolute;top:1.2rem;left:1.2rem;background:var(--fire);color:#fff;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;padding:0.25rem 0.75rem;border-radius:2px;}
+.news-feat-body{padding:2rem;}
+.news-feat-date{font-size:0.75rem;color:var(--muted);margin-bottom:0.6rem;}
+.news-feat-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.04em;margin-bottom:0.8rem;line-height:1.1;}
+.news-feat-excerpt{color:var(--muted);font-size:0.9rem;line-height:1.75;margin-bottom:1.5rem;}
+.news-sidebar{display:flex;flex-direction:column;gap:1.2rem;}
+.news-mini{background:var(--leaf);border-radius:4px;padding:1.4rem;border:1px solid rgba(255,255,255,0.06);cursor:pointer;transition:border-color 0.2s;}
+.news-mini:hover{border-color:rgba(255,107,0,0.3);}
+.news-mini-cat{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem;}
+.news-mini-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.04em;margin-bottom:0.4rem;line-height:1.2;}
+.news-mini-date{font-size:0.72rem;color:var(--muted);}
+
+/* EVENTS */
+#events{background:var(--dark);}
+.events-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;margin-top:4rem;align-items:start;}
+.mini-calendar{background:var(--leaf);border-radius:6px;padding:1.8rem;border:1px solid rgba(255,107,0,0.15);}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+.cal-month{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.06em;}
+.cal-nav{background:rgba(255,107,0,0.15);border:none;color:var(--fire);width:30px;height:30px;border-radius:3px;cursor:pointer;font-size:1rem;transition:background 0.2s;}
+.cal-nav:hover{background:rgba(255,107,0,0.3);}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;}
+.cal-day-name{font-size:0.6rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0;}
+.cal-day{padding:0.45rem 0;font-size:0.82rem;border-radius:3px;cursor:pointer;transition:background 0.15s;}
+.cal-day:hover{background:rgba(255,107,0,0.15);}
+.cal-day.today{background:var(--fire);color:#fff;font-weight:600;}
+.cal-day.has-event{position:relative;}
+.cal-day.has-event::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:var(--teal);border-radius:50%;}
+.cal-day.empty{opacity:0;pointer-events:none;}
+.events-list{display:flex;flex-direction:column;gap:1.2rem;}
+.event-item{background:var(--leaf);border-radius:5px;padding:1.5rem;display:flex;gap:1.5rem;align-items:flex-start;border:1px solid rgba(255,255,255,0.06);transition:border-color 0.2s,transform 0.2s;}
+.event-item:hover{border-color:rgba(46,196,182,0.3);transform:translateX(4px);}
+.event-date-box{background:var(--fire);border-radius:4px;padding:0.6rem 0.8rem;text-align:center;min-width:54px;flex-shrink:0;}
+.event-day{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1;color:#fff;}
+.event-month{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.8);}
+.event-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.04em;margin-bottom:0.3rem;}
+.event-meta{font-size:0.78rem;color:var(--muted);display:flex;gap:1rem;margin-bottom:0.4rem;flex-wrap:wrap;}
+.event-desc{font-size:0.85rem;color:var(--muted);line-height:1.6;}
+
+/* GALLERY */
+#gallery{background:var(--deep);}
+.gallery-tabs{display:flex;gap:0.8rem;margin:2rem 0;flex-wrap:wrap;}
+.gallery-tab{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:var(--muted);padding:0.5rem 1.4rem;border-radius:3px;cursor:pointer;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s;}
+.gallery-tab.active,.gallery-tab:hover{background:var(--fire);border-color:var(--fire);color:#fff;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem;}
+.gallery-item{border-radius:4px;overflow:hidden;cursor:pointer;position:relative;background:var(--leaf);min-height:220px;}
+.gallery-item::before{content:'';display:block;padding-top:100%;}
+.gallery-item:first-child{grid-column:span 2;grid-row:span 2;min-height:300px;}
+.gallery-img{position:absolute;inset:0;overflow:hidden;}
+.gallery-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;display:block;}
+.gallery-item:hover .gallery-img img{transform:scale(1.07);}
+.gallery-overlay{position:absolute;inset:0;background:rgba(10,22,18,0.65);opacity:0;display:flex;align-items:flex-end;padding:1rem;transition:opacity 0.3s;}
+.gallery-item:hover .gallery-overlay{opacity:1;}
+.gallery-caption{font-size:0.82rem;font-weight:500;}
+
+/* TEAM */
+#team{background:var(--dark);}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:2rem;margin-top:4rem;}
+.team-card{text-align:center;padding:2rem 1.5rem;border:1px solid rgba(255,255,255,0.06);border-radius:4px;background:var(--leaf);transition:transform 0.25s,box-shadow 0.25s;}
+.team-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(255,107,0,0.12);}
+.team-avatar{width:70px;height:70px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;}
+.team-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.team-name{font-weight:500;font-size:0.95rem;margin-bottom:0.3rem;}
+.team-role{font-size:0.75rem;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;}
+.team-dept{font-size:0.72rem;color:var(--muted);margin-top:0.2rem;}
+.team-card.leader{border-color:rgba(255,107,0,0.3);background:linear-gradient(135deg,var(--leaf),rgba(255,107,0,0.08));}
+
+/* PARTNERS */
+#partners{background:var(--deep);text-align:center;}
+.partners-track-wrap{overflow:hidden;position:relative;margin:3rem 0 2rem;}
+.partners-track-wrap::before,.partners-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;}
+.partners-track-wrap::before{left:0;background:linear-gradient(to right,var(--deep),transparent);}
+.partners-track-wrap::after{right:0;background:linear-gradient(to left,var(--deep),transparent);}
+.partners-track{display:flex;gap:2rem;animation:slide 22s linear infinite;width:max-content;}
+.partners-track:hover{animation-play-state:paused;}
+@keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.partner-logo{background:var(--leaf);border:1px solid rgba(255,255,255,0.07);border-radius:5px;padding:1.2rem 2.5rem;min-width:170px;display:flex;flex-direction:column;align-items:center;gap:0.6rem;transition:border-color 0.2s;}
+.partner-logo:hover{border-color:rgba(255,107,0,0.3);}
+.partner-emoji{font-size:2rem;}
+.partner-name{font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+.become-partner{background:rgba(46,196,182,0.07);border:1px solid rgba(46,196,182,0.2);border-radius:6px;padding:3rem;max-width:700px;margin:3rem auto 0;}
+.become-partner h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;margin-bottom:0.8rem;}
+.become-partner p{color:var(--muted);font-size:0.92rem;line-height:1.7;margin-bottom:2rem;}
+
+/* DONATE */
+#donate{background:linear-gradient(135deg,#0D1F1A,#1A3A2A 50%,#0A1612);position:relative;overflow:hidden;}
+#donate::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,0.12),transparent 70%);pointer-events:none;}
+.donate-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.donate-why{margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.donate-reason{display:flex;gap:1rem;align-items:flex-start;}
+.donate-icon{font-size:1.5rem;min-width:36px;}
+.donate-reason strong{display:block;margin-bottom:0.2rem;font-size:0.95rem;}
+.donate-reason span{font-size:0.87rem;color:var(--muted);line-height:1.6;}
+.donate-box{background:rgba(255,255,255,0.04);border:1px solid rgba(255,107,0,0.2);border-radius:8px;padding:3rem;}
+.donate-amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin:1.5rem 0;}
+.amount-btn{background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.25);color:var(--light);padding:0.9rem;border-radius:4px;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.06em;transition:all 0.2s;text-align:center;}
+.amount-btn:hover,.amount-btn.selected{background:var(--fire);border-color:var(--fire);color:#fff;}
+.donate-custom{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:4px;padding:0.8rem 1rem;color:var(--light);font-size:0.9rem;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:1.2rem;}
+.donate-custom:focus{border-color:var(--fire);}
+.donate-methods{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.2rem;}
+.method-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:var(--muted);padding:0.4rem 1rem;border-radius:3px;cursor:pointer;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;transition:all 0.2s;}
+.method-btn:hover,.method-btn.sel{background:rgba(46,196,182,0.15);border-color:var(--teal);color:var(--teal);}
+#paymentInfo{background:rgba(46,196,182,0.08);border:1px solid rgba(46,196,182,0.2);border-radius:4px;padding:1.2rem;margin-bottom:1.5rem;font-size:0.85rem;color:var(--muted);line-height:1.8;}
+
+/* PORTAL */
+#portal{background:var(--dark);}
+.portal-layout{display:grid;grid-template-columns:260px 1fr;gap:2.5rem;margin-top:3rem;}
+.portal-sidebar{background:var(--leaf);border-radius:6px;padding:1.5rem;border:1px solid rgba(255,255,255,0.07);}
+.portal-user{text-align:center;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:1.2rem;}
+.portal-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--fire),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.6rem;margin:0 auto 0.8rem;}
+.portal-username{font-weight:500;margin-bottom:0.2rem;}
+.portal-role{font-size:0.75rem;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;}
+.portal-nav-item{padding:0.7rem 1rem;border-radius:3px;cursor:pointer;font-size:0.85rem;color:var(--muted);transition:all 0.15s;display:flex;align-items:center;gap:0.6rem;margin-bottom:0.3rem;}
+.portal-nav-item:hover,.portal-nav-item.active{background:rgba(255,107,0,0.12);color:var(--fire);}
+.portal-content{background:var(--leaf);border-radius:6px;padding:2rem;border:1px solid rgba(255,255,255,0.07);}
+.portal-panel{display:none;}
+.portal-panel.active{display:block;}
+.portal-panel h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.06em;margin-bottom:1.5rem;}
+.resource-list{display:flex;flex-direction:column;gap:0.8rem;}
+.resource-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;cursor:pointer;transition:border-color 0.2s;}
+.resource-item:hover{border-color:rgba(255,107,0,0.3);}
+.res-icon{font-size:1.4rem;}
+.res-title{font-size:0.9rem;font-weight:500;margin-bottom:0.1rem;}
+.res-meta{font-size:0.75rem;color:var(--muted);}
+.res-dl{margin-left:auto;font-size:0.7rem;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;}
+.announce-list{display:flex;flex-direction:column;gap:1rem;}
+.announce-item{background:rgba(255,255,255,0.03);border-left:3px solid var(--fire);padding:1rem 1.2rem;border-radius:0 4px 4px 0;}
+.announce-item.info{border-color:var(--teal);}
+.announce-date{font-size:0.72rem;color:var(--muted);margin-bottom:0.3rem;}
+.announce-title{font-weight:500;font-size:0.92rem;margin-bottom:0.3rem;}
+.announce-body{font-size:0.85rem;color:var(--muted);line-height:1.6;}
+.portal-login-box{max-width:420px;margin:0 auto;background:var(--leaf);border:1px solid rgba(255,107,0,0.15);border-radius:6px;padding:3rem;text-align:center;}
+.portal-login-box h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;margin-bottom:0.5rem;}
+.portal-login-box p{color:var(--muted);font-size:0.88rem;margin-bottom:2rem;}
+
+/* JOIN */
+#join{background:var(--deep);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.join-requirements{margin-top:2rem;display:flex;flex-direction:column;gap:1rem;}
+.req-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem;background:rgba(46,196,182,0.06);border-left:3px solid var(--teal);border-radius:0 4px 4px 0;}
+.req-check{color:var(--teal);font-size:1.1rem;flex-shrink:0;}
+.req-text{font-size:0.9rem;color:var(--muted);line-height:1.6;}
+.req-text strong{color:var(--light);}
+.join-form-area{background:var(--leaf);padding:3rem;border:1px solid rgba(255,107,0,0.15);border-radius:6px;}
+.join-form-area h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:0.06em;margin-bottom:0.5rem;}
+.join-form-area>p{color:var(--muted);font-size:0.88rem;margin-bottom:2rem;}
+.form-group{margin-bottom:1.2rem;}
+.form-group label{display:block;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:0.8rem 1rem;color:var(--light);font-family:'DM Sans',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--fire);}
+.form-group select option{background:var(--dark);}
+.form-group textarea{resize:vertical;min-height:90px;}
+
+/* CONTACT */
+#contact{background:var(--dark);text-align:center;}
+#contact .section-body{margin:0 auto 3rem;}
+.contact-cards{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:3rem;}
+.contact-card{background:var(--leaf);border:1px solid rgba(255,255,255,0.07);border-radius:4px;padding:2rem 2.5rem;min-width:180px;transition:transform 0.2s;}
+.contact-card:hover{transform:translateY(-3px);}
+.cc-icon{font-size:1.8rem;margin-bottom:0.8rem;}
+.cc-label{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem;}
+.cc-value{color:var(--teal);font-size:0.9rem;}
+.cc-value a{color:var(--teal);text-decoration:none;}
+.cc-value a:hover{text-decoration:underline;}
+
+/* FOOTER */
+footer{background:#060e0b;border-top:1px solid rgba(255,107,0,0.15);padding:3rem;display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center;}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--fire);letter-spacing:0.08em;}
+.footer-logo span{color:var(--teal);}
+.footer-tagline{font-style:italic;color:var(--muted);font-size:0.82rem;margin-top:0.3rem;}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.78rem;transition:color 0.2s;}
+.footer-links a:hover{color:var(--fire);}
+.footer-copy{color:rgba(248,244,238,0.25);font-size:0.75rem;}
+
+@media(max-width:960px){
+  #about,#values,#join,.donate-layout,.events-layout,.news-grid,.portal-layout{grid-template-columns:1fr;}
+  .about-visual,.portal-sidebar{display:none;}
+  nav ul{display:none;}
+  .nav-toggle{display:block;}
+  nav{padding:1rem 1.5rem;}
+  section{padding:4rem 1.5rem;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .gallery-item:first-child{grid-column:span 2;min-height:200px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Primary navigation">
+  <div class="nav-logo"><img src="TFGI Orange.png" alt="TFGI logo"><span>TFGI</span> <span>·</span> Tour de Force</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#portal">Members</a></li>
+    <li><a href="#join">Join</a></li>
+    <li><a href="#donate" class="nav-cta">Donate</a></li>
+  </ul>
+  <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+</nav>
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="particles" id="particles"></div>
+  <div class="rings">
+    <div class="ring" style="width:300px;height:300px;"></div>
+    <div class="ring" style="width:600px;height:600px;animation-delay:1.5s;"></div>
+    <div class="ring" style="width:900px;height:900px;animation-delay:3s;"></div>
+  </div>
+  <div style="position:relative;z-index:2;">
+    <div class="hero-badge">🌍 Youth-Led · Livingstone, Zambia · Est. June 2024</div>
+    <h1 class="hero-title">
+      <span class="line1">Tour de</span>
+      <span class="line2">Force</span>
+      <span class="line3">Green Initiative</span>
+    </h1>
+    <p class="hero-tagline"><strong>Ignite Triumph Within</strong> — Empowering youth to lead the fight for climate justice</p>
+    <div class="hero-ctas">
+      <a href="#donate" class="btn-primary">Support Our Work</a>
+      <a href="#join" class="btn-teal">Join the Movement</a>
+      <a href="#programs" class="btn-outline">Our Programs</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">2024</div><div class="stat-label">Year Founded</div></div>
+  <div class="stat"><div class="stat-num">16–29</div><div class="stat-label">Member Age Range</div></div>
+  <div class="stat"><div class="stat-num" data-target="15">0</div><div class="stat-label">Team Members</div></div>
+  <div class="stat"><div class="stat-num" data-target="50+">0</div><div class="stat-label">Youth Reached</div></div>
+  <div class="stat"><div class="stat-num" data-target="50+">0</div><div class="stat-label">Trees Planted</div></div>
+  <div class="stat"><div class="stat-num" data-target="6">0</div><div class="stat-label">Active Programs</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual">
+    <div class="about-circle">
+      <div style="text-align:center;padding:2rem;">
+        <div class="big-text">TFGI</div>
+        <div class="sub-text">Tour de Force<br>Green Initiative</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="section-tag">Who We Are</div>
+    <h2 class="section-title">A New Force<br>for Climate Justice</h2>
+    <div class="founded">Founded June 12, 2024</div>
+    <p class="section-body" style="margin-bottom:1.5rem;">Tour de Force Green Initiative is a dynamic youth-led NGO based in Livingstone, Zambia, founded by climate activist <strong style="color:var(--light);">Matongo Miles Munyama</strong> — with experience at Oxfam Denmark, Action Aid, and certifications in global organizing and leadership development.</p>
+    <p class="section-body" style="margin-bottom:2rem;"><em>Tour de Force</em> — a French phrase meaning "victory" — reflects our mission to eradicate climate change and promote climate justice by empowering the next generation.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;"><a href="#join" class="btn-primary">Become a Member</a><a href="#donate" class="btn-outline">Support Us</a></div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission">
+  <div style="text-align:center;max-width:600px;margin:0 auto;">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">Mission &amp; Objectives</h2>
+    <p class="section-body" style="margin:0 auto;">We exist to eradicate climate change and promote climate justice by empowering youth across Zambia and beyond.</p>
+  </div>
+  <div class="mission-grid">
+    <div class="mission-card"><div class="card-icon">🌡️</div><div class="card-title">Combat Climate Change</div><p class="card-body">Implement evidence-based strategies to mitigate the effects of climate change at community, national, and global levels.</p></div>
+    <div class="mission-card"><div class="card-icon">⚖️</div><div class="card-title">Promote Climate Justice</div><p class="card-body">Ensure fair treatment of all people — especially the most vulnerable — in climate policies and international negotiations.</p></div>
+    <div class="mission-card"><div class="card-icon">🎓</div><div class="card-title">Youth Empowerment</div><p class="card-body">Provide comprehensive education and training on climate change and justice for youth aged 16–29 through workshops and mentorship.</p></div>
+    <div class="mission-card"><div class="card-icon">🤝</div><div class="card-title">Community Engagement</div><p class="card-body">Assist local communities in adopting sustainable practices that protect both their livelihoods and the natural environment.</p></div>
+    <div class="mission-card"><div class="card-icon">📢</div><div class="card-title">Advocacy</div><p class="card-body">Champion policies that support meaningful climate action and justice at every level — local, national, and international.</p></div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div><div class="section-tag">What We Stand For</div><h2 class="section-title">Our Core<br>Values</h2><p class="section-body">Every action is rooted in a clear set of values that guide our work, our partnerships, and our vision for the future.</p></div>
+  <div class="values-list">
+    <div class="value-item"><div class="value-dot">🌱</div><div><div class="value-name">Sustainability</div><div class="value-desc">A steadfast commitment to long-term environmental health — decisions today that protect tomorrow.</div></div></div>
+    <div class="value-item"><div class="value-dot">⚖️</div><div><div class="value-name">Equity</div><div class="value-desc">Fair treatment and equal opportunities for all individuals regardless of background.</div></div></div>
+    <div class="value-item"><div class="value-dot">💡</div><div><div class="value-name">Integrity</div><div class="value-desc">Complete transparency and honesty in all our actions, communications, and partnerships.</div></div></div>
+    <div class="value-item"><div class="value-dot">🤝</div><div><div class="value-name">Collaboration</div><div class="value-desc">Working hand-in-hand with communities, partners, and stakeholders to amplify impact.</div></div></div>
+    <div class="value-item"><div class="value-dot">🔬</div><div><div class="value-name">Innovation</div><div class="value-desc">Encouraging bold new ideas and creative solutions to address climate challenges.</div></div></div>
+  </div>
+</section>
+
+<!-- IMPACT DASHBOARD -->
+<section id="impact">
+  <div style="max-width:650px;margin:0 auto 1rem;text-align:center;">
+    <div class="section-tag">Results on the Ground</div>
+    <h2 class="section-title">Impact Dashboard</h2>
+    <p class="section-body" style="margin:0 auto;">A live snapshot of our growing footprint across Livingstone and Zambia since June 2024.</p>
+  </div>
+  <div class="impact-grid">
+    <div class="impact-card"><div class="impact-icon">🌳</div><span class="impact-count" data-target="50+">0</span><div class="impact-label">Trees Planted</div></div>
+    <div class="impact-card"><div class="impact-icon">👩‍🎓</div><span class="impact-count" data-target="50+">0</span><div class="impact-label">Youth Trained</div></div>
+    <div class="impact-card"><div class="impact-icon">🏘️</div><span class="impact-count" data-target="3">0</span><div class="impact-label">Communities</div></div>
+    <div class="impact-card"><div class="impact-icon">📋</div><span class="impact-count" data-target="12">0</span><div class="impact-label">Events Held</div></div>
+    <div class="impact-card"><div class="impact-icon">🤝</div><span class="impact-count" data-target="8">0</span><div class="impact-label">Partnerships Sought</div></div>
+    <div class="impact-card"><div class="impact-icon">📣</div><span class="impact-count" data-target="4">0</span><div class="impact-label">Advocacy Campaigns</div></div>
+  </div>
+  <div class="bar-wrap">
+    <h4>Activity by Focus Area</h4>
+    <div class="bar-chart">
+      <div class="bar-row"><span class="bar-label">Tree Planting</span><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div><span class="bar-val">85%</span></div>
+      <div class="bar-row"><span class="bar-label">Youth Training</span><div class="bar-track"><div class="bar-fill" style="width:72%;animation-delay:0.2s"></div></div><span class="bar-val">72%</span></div>
+      <div class="bar-row"><span class="bar-label">Community Outreach</span><div class="bar-track"><div class="bar-fill" style="width:60%;animation-delay:0.4s"></div></div><span class="bar-val">60%</span></div>
+      <div class="bar-row"><span class="bar-label">Advocacy</span><div class="bar-track"><div class="bar-fill" style="width:45%;animation-delay:0.6s"></div></div><span class="bar-val">45%</span></div>
+      <div class="bar-row"><span class="bar-label">Partnership Building</span><div class="bar-track"><div class="bar-fill" style="width:35%;animation-delay:0.8s"></div></div><span class="bar-val">35%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="section-tag">What We Run</div>
+  <h2 class="section-title">Programs &amp; Projects</h2>
+  <p class="section-body">From the ground up — current and upcoming initiatives driving change in Livingstone and beyond.</p>
+  <div class="programs-grid">
+    <div class="program-card">
+      <div class="program-header" style="background:linear-gradient(135deg,#1A4035,#2D6A4F);">🌳</div>
+      <div class="program-body"><span class="program-tag tag-active">Active</span><div class="program-title">Green Livingstone Tree Drive</div><p class="program-desc">Community-wide tree planting targeting urban heat islands in Livingstone. Working with schools and local councils to plant and maintain indigenous trees.</p><div class="program-meta"><span>📍 Livingstone</span><span>🌳 50+ trees</span><span>👥 6 schools</span></div></div>
+    </div>
+    <div class="program-card">
+      <div class="program-header" style="background:linear-gradient(135deg,#0D1F1A,#1A3A50);">🎓</div>
+      <div class="program-body"><span class="program-tag tag-active">Active</span><div class="program-title">Climate Academy</div><p class="program-desc">Monthly workshops for youth aged 16–29 covering climate science, advocacy skills, sustainable livelihoods, and leadership development.</p><div class="program-meta"><span>📅 Monthly</span><span>👥 50+ trained</span><span>📚 8 modules</span></div></div>
+    </div>
+    <div class="program-card">
+      <div class="program-header" style="background:linear-gradient(135deg,#1A2A1A,#3A5A2A);">♻️</div>
+      <div class="program-body"><span class="program-tag tag-ongoing">Ongoing</span><div class="program-title">Community Clean-Up Campaign</div><p class="program-desc">Quarterly clean-up drives targeting waterways, parks, and markets — turning awareness into direct environmental action with community volunteers.</p><div class="program-meta"><span>📍 3 communities</span><span>🗓️ Quarterly</span><span>👥 200+ volunteers</span></div></div>
+    </div>
+    <div class="program-card">
+      <div class="program-header" style="background:linear-gradient(135deg,#1A1A2A,#2A1A3A);">🌞</div>
+      <div class="program-body"><span class="program-tag tag-planned">Planned</span><div class="program-title">Solar Access for Schools</div><p class="program-desc">Helping off-grid rural schools access affordable solar energy — reducing dependence on firewood and improving study conditions for students.</p><div class="program-meta"><span>🎯 5 schools</span><span>📅 Q3 2025</span><span>🔋 Solar powered</span></div></div>
+    </div>
+    <div class="program-card">
+      <div class="program-header" style="background:linear-gradient(135deg,#2A1A0A,#4A2A0A);">🌾</div>
+      <div class="program-body"><span class="program-tag tag-planned">Planned</span><div class="program-title">Climate-Smart Farming</div><p class="program-desc">Training smallholder farmers in drought-tolerant crops, water conservation, and sustainable soil management to protect food security.</p><div class="program-meta"><span>📍 Rural Livingstone</span><span>📅 2025</span><span>🌾 50 farmers</span></div></div>
+    </div>
+    <div class="program-card">
+      <div class="program-header" style="background:linear-gradient(135deg,#0A1A2A,#0A2A3A);">📜</div>
+      <div class="program-body"><span class="program-tag tag-active">Active</span><div class="program-title">Youth Climate Advocacy</div><p class="program-desc">Supporting youth to engage with local and national government on climate policy through petitions, stakeholder meetings, and climate forums.</p><div class="program-meta"><span>📢 4 campaigns</span><span>🏛️ Policy focused</span><span>📝 2 petitions</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="section-tag">Latest Updates</div>
+  <h2 class="section-title">News &amp; Blog</h2>
+  <p class="section-body">Stay informed on TFGI activities, climate developments in Zambia, and stories from our community.</p>
+  <div class="news-grid">
+    <div class="news-featured">
+      <div class="news-feat-img">🌳<span class="news-feat-cat">Feature Story</span></div>
+      <div class="news-feat-body">
+        <div class="news-feat-date">April 10, 2025 · By Matongo Miles Munyama</div>
+        <div class="news-feat-title">50+ Trees Planted — Our First Major Milestone</div>
+        <p class="news-feat-excerpt">What began as a vision in June 2024 has grown into a tangible green movement across Livingstone. Our Green Livingstone Tree Drive recently crossed the 50-tree mark — a testament to the power of youth-led action, community partnership, and unwavering commitment to our environment.</p>
+        <a href="#" class="btn-outline" style="font-size:0.8rem;padding:0.6rem 1.5rem;">Read Full Story →</a>
+      </div>
+    </div>
+    <div class="news-sidebar">
+      <div class="news-mini"><div class="news-mini-cat">Climate Justice</div><div class="news-mini-title">Zambia's Youth Speak at National Climate Forum</div><div class="news-mini-date">March 22, 2025</div></div>
+      <div class="news-mini"><div class="news-mini-cat">Community</div><div class="news-mini-title">Victoria Falls Clean-Up Drive Draws 200 Volunteers</div><div class="news-mini-date">March 5, 2025</div></div>
+      <div class="news-mini"><div class="news-mini-cat">Education</div><div class="news-mini-title">Climate Academy Module 5: Sustainable Livelihoods</div><div class="news-mini-date">February 18, 2025</div></div>
+      <div class="news-mini"><div class="news-mini-cat">Advocacy</div><div class="news-mini-title">TFGI Submits Climate Petition to Livingstone Council</div><div class="news-mini-date">January 30, 2025</div></div>
+      <a href="#" class="btn-outline" style="font-size:0.78rem;padding:0.6rem 1.5rem;text-align:center;">View All Posts →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="section-tag">What's Coming Up</div>
+  <h2 class="section-title">Events Calendar</h2>
+  <p class="section-body">Join us at upcoming events — open to members, volunteers, and the wider community.</p>
+  <div class="events-layout">
+    <div class="mini-calendar">
+      <div class="cal-header">
+        <button type="button" class="cal-nav" onclick="changeMonth(-1)">‹</button>
+        <div class="cal-month" id="calTitle"></div>
+        <button type="button" class="cal-nav" onclick="changeMonth(1)">›</button>
+      </div>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+    <div class="events-list">
+      <div class="event-item"><div class="event-date-box"><div class="event-day">22</div><div class="event-month">APR</div></div><div><div class="event-title">Earth Day Tree Planting — Maramba</div><div class="event-meta"><span>📍 Maramba District</span><span>⏰ 8:00 AM</span><span>👥 Open to all</span></div><p class="event-desc">Join us for a special Earth Day tree planting event. Seedlings and refreshments provided.</p></div></div>
+      <div class="event-item"><div class="event-date-box"><div class="event-day">3</div><div class="event-month">MAY</div></div><div><div class="event-title">Climate Academy — Module 6: Advocacy Tools</div><div class="event-meta"><span>📍 Community Hall</span><span>⏰ 10:00 AM</span><span>👥 Members</span></div><p class="event-desc">Practical advocacy skills — engaging policy makers, writing petitions, and using social media for climate campaigns.</p></div></div>
+      <div class="event-item"><div class="event-date-box" style="background:var(--teal);"><div class="event-day">17</div><div class="event-month">MAY</div></div><div><div class="event-title">Partnership Forum — Sponsors &amp; NGO Partners</div><div class="event-meta"><span>📍 Livingstone Hotel</span><span>⏰ 2:00 PM</span><span>👥 Invite only</span></div><p class="event-desc">Inaugural forum bringing together potential sponsors, partner NGOs, and government stakeholders.</p></div></div>
+      <div class="event-item"><div class="event-date-box"><div class="event-day">7</div><div class="event-month">JUN</div></div><div><div class="event-title">TFGI 1st Anniversary Celebration &amp; Awards</div><div class="event-meta"><span>📍 Livingstone</span><span>⏰ 5:00 PM</span><span>👥 All welcome</span></div><p class="event-desc">Celebrating one year of impact! Honouring outstanding members and launching our next chapter.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-tag">Moments in Action</div>
+  <h2 class="section-title">Photo Gallery</h2>
+  <p class="section-body">A glimpse into the people, places, and events that make TFGI what it is. <em>(Replace emoji placeholders with your real photos!)</em></p>
+  <div class="gallery-tabs">
+    <button type="button" class="gallery-tab active" onclick="filterGallery('all',this)">All</button>
+    <button type="button" class="gallery-tab" onclick="filterGallery('events',this)">Events</button>
+    <button type="button" class="gallery-tab" onclick="filterGallery('planting',this)">Tree Planting</button>
+    <button type="button" class="gallery-tab" onclick="filterGallery('training',this)">Training</button>
+    <button type="button" class="gallery-tab" onclick="filterGallery('team',this)">Team</button>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-item" data-cat="planting"><div class="gallery-img"><img src="Tree%20planting%20venture/IMG-20240629-WA0046.jpg" alt="Volunteers planting trees in Livingstone" loading="lazy" decoding="async"></div><div class="gallery-overlay"><span class="gallery-caption">Tree Planting Drive · Livingstone</span></div></div>
+    <div class="gallery-item" data-cat="planting"><div class="gallery-img"><img src="Tree%20planting%20venture/IMG-20240629-WA0055.jpg" alt="Team preparing seedlings for distribution" loading="lazy" decoding="async"></div><div class="gallery-overlay"><span class="gallery-caption">Seedling Preparation</span></div></div>
+    <div class="gallery-item" data-cat="planting"><div class="gallery-img"><img src="Tree%20planting%20venture/IMG-20240629-WA0064.jpg" alt="Community members planting trees together" loading="lazy" decoding="async"></div><div class="gallery-overlay"><span class="gallery-caption">Community Tree Planting</span></div></div>
+    <div class="gallery-item" data-cat="planting"><div class="gallery-img"><img src="Tree%20planting%20venture/IMG-20240629-WA0113.jpg" alt="TFGI members celebrating a successful planting event" loading="lazy" decoding="async"></div><div class="gallery-overlay"><span class="gallery-caption">Celebrating Green Impact</span></div></div>
+    <div class="gallery-item" data-cat="training"><div class="gallery-img"><img src="Tree%20planting%20venture/IMG-20250321-WA0000%20(1).jpg" alt="Youth training session during a TFGI project" loading="lazy" decoding="async"></div><div class="gallery-overlay"><span class="gallery-caption">Youth Training Workshop</span></div></div>
+    <div class="gallery-item" data-cat="events"><div class="gallery-img"><img src="Tree%20planting%20venture/IMG-20250321-WA0052.jpg" alt="Volunteers working together on a field project" loading="lazy" decoding="async"></div><div class="gallery-overlay"><span class="gallery-caption">Field Project in Action</span></div></div>
+    <div class="gallery-item" data-cat="team"><div class="gallery-img"><img src="Tree%20planting%20venture/TFGI%20Orange.png" alt="TFGI team logo displayed during a project event" loading="lazy" decoding="async"></div><div class="gallery-overlay"><span class="gallery-caption">TFGI Project Team</span></div></div>
+    <div class="gallery-item" data-cat="planting"><div class="gallery-img"><img src="TGFI/Hannah%20Mwanza.jpeg" alt="TFGI leadership supporting the tree planting event" loading="lazy" decoding="async"></div><div class="gallery-overlay"><span class="gallery-caption">Leadership in the Field</span></div></div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-tag">The People Behind TFGI</div>
+  <h2 class="section-title">Meet the Team</h2>
+  <div class="team-grid">
+    <div class="team-card leader"><div class="team-avatar"><img src="TGFI/Miles%20M%20Munyama.jpeg" alt="Matongo Miles Munyama" loading="lazy" decoding="async"></div><div class="team-name">Matongo Miles Munyama</div><div class="team-role">Founder / CEO</div></div>
+    <div class="team-card leader"><div class="team-avatar"><img src="TGFI/Hannah%20Mwanza.jpeg" alt="Hannah Mwanza" loading="lazy" decoding="async"></div><div class="team-name">Hannah Mwanza</div><div class="team-role">Executive Director</div></div>
+    <div class="team-card leader"><div class="team-avatar"><img src="TGFI/Valerie%20Banda.jpeg" alt="Valerie Banda" loading="lazy" decoding="async"></div><div class="team-name">Valerie Banda</div><div class="team-role">Secretary General</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Dominic%20Tembo.jpeg" alt="Dominic Tembo" loading="lazy" decoding="async"></div><div class="team-name">Dominic Tembo</div><div class="team-role">CTO</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Canisus%20Zimba.jpeg" alt="Canisus Zimba" loading="lazy" decoding="async"></div><div class="team-name">Canisus Zimba</div><div class="team-role">Education</div><div class="team-dept">Director</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Genera%20Nakaluzwe.jpeg" alt="Genera Nakaluzwe" loading="lazy" decoding="async"></div><div class="team-name">Genara Nakaluzwe</div><div class="team-role">Partnership</div><div class="team-dept">Director</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Keletso-M-Alamayehu.jpeg" alt="Keletso-M-Alamayehu" loading="lazy" decoding="async"></div><div class="team-name">Keletso-M-Alamayehu</div><div class="team-role">Community</div><div class="team-dept">Director</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Ruth%20Kunda.jpeg" alt="Ruth Kunda" loading="lazy" decoding="async"></div><div class="team-name">Ruth Kunda</div><div class="team-role">Finance</div><div class="team-dept">Director</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Collin%20siatembo.jpeg" alt="Collin Slatembo" loading="lazy" decoding="async"></div><div class="team-name">Collin Slatembo</div><div class="team-role">Communication</div><div class="team-dept">Director</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Nchimunya%20Chimuka.jpeg" alt="Nchimunya Chimuka" loading="lazy" decoding="async"></div><div class="team-name">Nchimunya Chimuka</div><div class="team-role">Graphic Designer</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Selina%20Soko.jpeg" alt="Selina Soko" loading="lazy" decoding="async"></div><div class="team-name">Selina Soko</div><div class="team-role">Programs</div><div class="team-dept">Director</div></div>
+    <div class="team-card"><div class="team-avatar"><img src="TGFI/Davies%20Kunda.jpeg" alt="Davis Kunda" loading="lazy" decoding="async"></div><div class="team-name">Davis Kunda</div><div class="team-role">Fundraising</div><div class="team-dept">Director</div></div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="section-tag">Collaborators &amp; Supporters</div>
+  <h2 class="section-title">Partners &amp; Sponsors</h2>
+  <p class="section-body" style="margin:0 auto 0.5rem;">Actively building our network of partners. The logos below represent aspirational and current collaborators.</p>
+  <div class="partners-track-wrap">
+    <div class="partners-track">
+      <div class="partner-logo placeholder"><div class="placeholder-icon">🏢</div><div class="partner-name">Partner A</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">🤝</div><div class="partner-name">Partner B</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">🌍</div><div class="partner-name">Partner C</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">🏛️</div><div class="partner-name">Partner D</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">🔗</div><div class="partner-name">Partner E</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">👥</div><div class="partner-name">Partner F</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">💼</div><div class="partner-name">Sponsor A</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">🏦</div><div class="partner-name">Sponsor B</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">💰</div><div class="partner-name">Sponsor C</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">🎯</div><div class="partner-name">Sponsor D</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">⭐</div><div class="partner-name">Sponsor E</div></div>
+      <div class="partner-logo placeholder"><div class="placeholder-icon">🙌</div><div class="partner-name">Sponsor F</div></div>
+    </div>
+  </div>
+  <div class="become-partner">
+    <h3>Become a Partner or Sponsor</h3>
+    <p>TFGI is actively seeking funding partners, technical collaborators, and sponsorships for our programs. Your support directly enables youth-led climate action in Zambia. We welcome NGOs, corporations, government bodies, and individual donors.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;"><a href="mailto:tourdeforce8@gmail.com" class="btn-primary">Partner With Us</a><a href="#donate" class="btn-outline">Make a Donation</a></div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section id="donate">
+  <div class="donate-layout">
+    <div>
+      <div class="section-tag">Support Our Work</div>
+      <h2 class="section-title">Fuel the<br>Movement</h2>
+      <p class="section-body" style="margin-bottom:2rem;">Every contribution — large or small — directly funds climate action on the ground in Zambia.</p>
+      <div class="donate-why">
+        <div class="donate-reason"><div class="donate-icon">🌳</div><div><strong>Plant Trees</strong><span>ZMW 50 plants one indigenous tree in Livingstone.</span></div></div>
+        <div class="donate-reason"><div class="donate-icon">🎓</div><div><strong>Train a Youth</strong><span>ZMW 200 funds one full Climate Academy workshop seat.</span></div></div>
+        <div class="donate-reason"><div class="donate-icon">📢</div><div><strong>Run a Campaign</strong><span>ZMW 500 sponsors one community advocacy drive.</span></div></div>
+        <div class="donate-reason"><div class="donate-icon">🔬</div><div><strong>Fund Research</strong><span>ZMW 1000 supports one month of local climate research.</span></div></div>
+      </div>
+    </div>
+    <div class="donate-box">
+      <div class="section-tag">Choose an Amount</div>
+      <div class="donate-amounts">
+        <div class="amount-btn" onclick="selAmount(this)">ZMW 50</div>
+        <div class="amount-btn" onclick="selAmount(this)">ZMW 100</div>
+        <div class="amount-btn selected" onclick="selAmount(this)">ZMW 200</div>
+        <div class="amount-btn" onclick="selAmount(this)">ZMW 500</div>
+        <div class="amount-btn" onclick="selAmount(this)">ZMW 1000</div>
+        <div class="amount-btn" onclick="selAmount(this,'custom')">Custom</div>
+      </div>
+      <input class="donate-custom" id="customAmt" type="text" placeholder="Enter amount (ZMW)" style="display:none;">
+      <div class="section-tag" style="margin-top:1.5rem;">Payment Method</div>
+      <div class="donate-methods">
+        <button type="button" class="method-btn sel" onclick="selMethod(this,'mobile')">📱 Mobile Money</button>
+        <button type="button" class="method-btn" onclick="selMethod(this,'bank')">🏦 Bank Transfer</button>
+        <button type="button" class="method-btn" onclick="selMethod(this,'card')">💳 Card</button>
+        <button type="button" class="method-btn" onclick="selMethod(this,'paypal')">🌐 PayPal</button>
+      </div>
+      <div id="paymentInfo">📱 <strong style="color:var(--light);">Mobile Money (Airtel/MTN):</strong><br>Send to: <span style="color:var(--teal);">+260 XXX XXX XXX</span><br>Account: <span style="color:var(--teal);">Tour de Force Green Initiative</span><br>Reference: <span style="color:var(--sun);">TFGI-DONATION</span></div>
+      <button type="button" class="btn-primary" style="width:100%;font-size:0.9rem;padding:1rem;" onclick="alert('Thank you! Please use the payment details shown to complete your donation. Contact tourdeforce8@gmail.com with any questions. 💚')">Donate Now 💚</button>
+      <p style="font-size:0.72rem;color:var(--muted);text-align:center;margin-top:1rem;">All donations support TFGI programs in Zambia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBER PORTAL -->
+<section id="portal">
+  <div class="section-tag">Members Area</div>
+  <h2 class="section-title">Member Portal</h2>
+  <p class="section-body" style="margin-bottom:2rem;">Access training resources, announcements, and member-only content.</p>
+  <div id="loginArea">
+    <div class="portal-login-box">
+      <h3>Member Login</h3>
+      <p>Enter your credentials to access the dashboard. Not a member? <a href="#join" style="color:var(--teal);">Apply here</a>.</p>
+      <div class="form-group"><label>Email</label><input type="email" id="loginEmail" placeholder="yourname@email.com"></div>
+      <div class="form-group"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••"></div>
+      <button type="button" class="btn-primary" style="width:100%;" onclick="doLogin()">Login to Portal</button>
+      <p style="font-size:0.75rem;color:var(--muted);margin-top:1rem;">Demo: any email + password <strong>tfgi2024</strong></p>
+    </div>
+  </div>
+  <div id="dashArea" style="display:none;">
+    <div class="portal-layout">
+      <div class="portal-sidebar">
+        <div class="portal-user"><div class="portal-avatar">TM</div><div class="portal-username">TFGI Member</div><div class="portal-role">Active Member</div></div>
+        <div class="portal-nav-item active" onclick="showPanel('resources',this)">📚 Resources</div>
+        <div class="portal-nav-item" onclick="showPanel('announcements',this)">📣 Announcements</div>
+        <div class="portal-nav-item" onclick="showPanel('schedule',this)">📅 My Schedule</div>
+        <div class="portal-nav-item" onclick="showPanel('profile',this)">👤 My Profile</div>
+        <div class="portal-nav-item" style="margin-top:2rem;color:rgba(255,107,0,0.5);" onclick="doLogout()">🚪 Logout</div>
+      </div>
+      <div class="portal-content">
+        <div class="portal-panel active" id="panel-resources">
+          <h3>Training Resources</h3>
+          <div class="resource-list">
+            <div class="resource-item"><div class="res-icon">📄</div><div><div class="res-title">Climate Change 101 — Intro Guide</div><div class="res-meta">PDF · Module 1 · Jan 2025</div></div><span class="res-dl">Download</span></div>
+            <div class="resource-item"><div class="res-icon">🎥</div><div><div class="res-title">Advocacy Skills Masterclass</div><div class="res-meta">Video · Module 3 · 45 min</div></div><span class="res-dl">Watch</span></div>
+            <div class="resource-item"><div class="res-icon">📊</div><div><div class="res-title">Zambia Climate Data Report 2024</div><div class="res-meta">PDF · Research · 32 pages</div></div><span class="res-dl">Download</span></div>
+            <div class="resource-item"><div class="res-icon">📝</div><div><div class="res-title">Community Engagement Toolkit</div><div class="res-meta">PDF · Module 5 · Field guide</div></div><span class="res-dl">Download</span></div>
+            <div class="resource-item"><div class="res-icon">🌱</div><div><div class="res-title">Tree Planting Best Practices</div><div class="res-meta">PDF · Operations · Jan 2025</div></div><span class="res-dl">Download</span></div>
+          </div>
+        </div>
+        <div class="portal-panel" id="panel-announcements">
+          <h3>Announcements</h3>
+          <div class="announce-list">
+            <div class="announce-item"><div class="announce-date">April 15, 2025</div><div class="announce-title">🌳 Earth Day Event — All Members Required</div><div class="announce-body">All active members are expected at the Earth Day tree planting event on April 22, Maramba District. Confirm attendance with your department director by April 18.</div></div>
+            <div class="announce-item info"><div class="announce-date">April 8, 2025</div><div class="announce-title">📋 New Training Module Available</div><div class="announce-body">Module 6 (Advocacy Tools) materials have been uploaded to the resources section. Please review before the May 3 workshop.</div></div>
+            <div class="announce-item"><div class="announce-date">March 28, 2025</div><div class="announce-title">🎉 Milestone — 50+ Youth Trained!</div><div class="announce-body">We've officially trained 50+ young people through our Climate Academy. A huge thank you to every member who made this possible!</div></div>
+          </div>
+        </div>
+        <div class="portal-panel" id="panel-schedule">
+          <h3>My Upcoming Schedule</h3>
+          <div class="resource-list">
+            <div class="resource-item"><div class="res-icon">🌳</div><div><div class="res-title">Earth Day Tree Planting — Maramba</div><div class="res-meta">April 22, 2025 · 8:00 AM · Mandatory</div></div><span class="res-dl" style="color:var(--fire);">Required</span></div>
+            <div class="resource-item"><div class="res-icon">📚</div><div><div class="res-title">Climate Academy Module 6</div><div class="res-meta">May 3, 2025 · 10:00 AM · Community Hall</div></div><span class="res-dl">RSVP</span></div>
+            <div class="resource-item"><div class="res-icon">🎂</div><div><div class="res-title">TFGI 1st Anniversary Celebration</div><div class="res-meta">June 7, 2025 · 5:00 PM · Livingstone</div></div><span class="res-dl">RSVP</span></div>
+          </div>
+        </div>
+        <div class="portal-panel" id="panel-profile">
+          <h3>My Profile</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+            <div class="form-group"><label>Full Name</label><input type="text" value="TFGI Member"></div>
+            <div class="form-group"><label>Email</label><input type="email" value="member@tfgi.org"></div>
+            <div class="form-group"><label>Department</label><select><option>Community Engagement</option><option>Education</option><option>Programs</option></select></div>
+            <div class="form-group"><label>Member Since</label><input type="text" value="January 2025" readonly></div>
+          </div>
+          <button type="button" class="btn-primary" onclick="alert('Profile saved!')">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section id="join">
+  <div>
+    <div class="section-tag">Get Involved</div>
+    <h2 class="section-title">Join the<br>Movement</h2>
+    <p class="section-body" style="margin-bottom:2.5rem;">We are looking for passionate young people ready to stand up for the planet.</p>
+    <div class="join-requirements">
+      <div class="req-item"><span class="req-check">✓</span><div class="req-text"><strong>Age 16–29</strong> — Open to young people within this range.</div></div>
+      <div class="req-item"><span class="req-check">✓</span><div class="req-text"><strong>Passion</strong> — A genuine interest in climate change and justice.</div></div>
+      <div class="req-item"><span class="req-check">✓</span><div class="req-text"><strong>Commitment</strong> — Willingness to participate in training and community projects.</div></div>
+      <div class="req-item"><span class="req-check">✓</span><div class="req-text"><strong>Skills</strong> — Open to learning and bringing diverse talents to the table.</div></div>
+    </div>
+  </div>
+  <div class="join-form-area">
+    <h3>Express Interest</h3>
+    <p>Fill out this form and we'll be in touch with official application details.</p>
+    <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your full name"></div>
+    <div class="form-group"><label>Email Address</label><input type="email" placeholder="yourname@email.com"></div>
+    <div class="form-group"><label>Age</label><input type="number" placeholder="16–29" min="16" max="29"></div>
+    <div class="form-group"><label>Area of Interest</label><select><option value="">Select a department…</option><option>Education</option><option>Community Engagement</option><option>Research</option><option>Programs</option><option>Communication</option><option>Finance & Fundraising</option><option>Innovation & Technology</option><option>Partnership</option></select></div>
+    <div class="form-group"><label>Why do you want to join TFGI?</label><textarea placeholder="Tell us about your passion for climate action…"></textarea></div>
+    <button type="button" class="btn-primary" style="width:100%;font-size:0.9rem;padding:1rem;" onclick="alert('Thank you! Applications open soon — follow us on social media for official forms. Email tourdeforce8@gmail.com for more info.')">Submit Expression of Interest</button>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-tag">Get in Touch</div>
+  <h2 class="section-title">Contact Us</h2>
+  <p class="section-body">Have questions, want to partner with us, or just want to learn more? Reach out.</p>
+  <div class="contact-cards">
+    <div class="contact-card"><div class="cc-icon">📧</div><div class="cc-label">Email</div><div class="cc-value"><a href="mailto:tourdeforce8@gmail.com">tourdeforce8@gmail.com</a></div></div>
+    <div class="contact-card"><div class="cc-icon">📘</div><div class="cc-label">Facebook</div><div class="cc-value"><a href="#">Tour de Force</a></div></div>
+    <div class="contact-card"><div class="cc-icon">💼</div><div class="cc-label">LinkedIn</div><div class="cc-value"><a href="#">Tour de Force</a></div></div>
+    <div class="contact-card"><div class="cc-icon">📸</div><div class="cc-label">Instagram</div><div class="cc-value"><a href="#">@Tourdeforce8</a></div></div>
+    <div class="contact-card"><div class="cc-icon">📍</div><div class="cc-label">Location</div><div class="cc-value">Livingstone, Zambia</div></div>
+  </div>
+  <a href="mailto:tourdeforce8@gmail.com" class="btn-primary">Send Us a Message</a>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div><div class="footer-logo">TFGI <span>·</span> Tour de Force Green Initiative</div><div class="footer-tagline">Ignite Triumph Within — Livingstone, Zambia · Founded 2024</div></div>
+  <div class="footer-links">
+    <a href="#about">About</a><a href="#impact">Impact</a><a href="#programs">Programs</a><a href="#news">News</a><a href="#events">Events</a><a href="#gallery">Gallery</a><a href="#team">Team</a><a href="#partners">Partners</a><a href="#donate">Donate</a><a href="#portal">Members</a><a href="#join">Join</a><a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Tour de Force Green Initiative. All rights reserved.</div>
+</footer>
+
+<script>
+/* PARTICLES */
+const pc=document.getElementById('particles');
+['#FF6B00','#F5A623','#2EC4B6','#FFD166','#1A4035'].forEach(c=>{
+  for(let i=0;i<6;i++){const p=document.createElement('div');p.className='particle';const s=Math.random()*6+2;p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;background:${c};animation-duration:${Math.random()*15+8}s;animation-delay:${Math.random()*10}s;`;pc.appendChild(p);}
+});
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';}}),{threshold:0.08});
+document.querySelectorAll('.mission-card,.team-card,.value-item,.req-item,.contact-card,.program-card,.event-item,.news-mini,.impact-card,.resource-item,.announce-item,.gallery-item,.partner-logo,.donate-reason').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity 0.5s ease,transform 0.5s ease';obs.observe(el);});
+
+/* COUNTERS */
+let counted=false;
+function animateCounters(){
+  if(counted)return;counted=true;
+  document.querySelectorAll('[data-target],.impact-count[data-target]').forEach(el=>{
+    const raw=el.dataset.target||'';
+    const t=parseInt(raw,10);if(isNaN(t))return;
+    const suffix=raw.trim().endsWith('+')?'+':'';
+    let c=0;const step=Math.max(1,Math.ceil(t/60));
+    const id=setInterval(()=>{c=Math.min(c+step,t);el.textContent=c+suffix;if(c>=t)clearInterval(id);},25);
+  });
+}
+new IntersectionObserver(e=>{if(e[0].isIntersecting)animateCounters();},{threshold:0.3}).observe(document.querySelector('.stats-bar'));
+new IntersectionObserver(e=>{if(e[0].isIntersecting)animateCounters();},{threshold:0.2}).observe(document.getElementById('impact'));
+
+/* CALENDAR */
+let calDate=new Date(2025,3,1);
+const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function renderCal(){
+  document.getElementById('calTitle').textContent=months[calDate.getMonth()]+' '+calDate.getFullYear();
+  const grid=document.getElementById('calGrid');
+  grid.innerHTML=['S','M','T','W','T','F','S'].map(d=>`<div class="cal-day-name">${d}</div>`).join('');
+  const first=new Date(calDate.getFullYear(),calDate.getMonth(),1).getDay();
+  const days=new Date(calDate.getFullYear(),calDate.getMonth()+1,0).getDate();
+  const today=new Date();const evDays=calDate.getMonth()===3?[22]:calDate.getMonth()===4?[3,17]:[];
+  for(let i=0;i<first;i++)grid.innerHTML+=`<div class="cal-day empty">·</div>`;
+  for(let d=1;d<=days;d++){
+    const isTod=d===today.getDate()&&calDate.getMonth()===today.getMonth()&&calDate.getFullYear()===today.getFullYear();
+    grid.innerHTML+=`<div class="cal-day${isTod?' today':''}${evDays.includes(d)?' has-event':''}">${d}</div>`;
+  }
+}
+function changeMonth(dir){calDate=new Date(calDate.getFullYear(),calDate.getMonth()+dir,1);renderCal();}
+renderCal();
+
+/* GALLERY */
+function filterGallery(cat,btn){
+  document.querySelectorAll('.gallery-tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');
+  document.querySelectorAll('.gallery-item').forEach(el=>{el.style.display=(cat==='all'||el.dataset.cat===cat)?'':'none';});
+}
+
+/* DONATE */
+function selAmount(el,type){
+  document.querySelectorAll('.amount-btn').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');
+  document.getElementById('customAmt').style.display=type==='custom'?'block':'none';
+}
+const payInstructions={
+  mobile:'📱 <strong style="color:var(--light)">Mobile Money (Airtel/MTN):</strong><br>Send to: <span style="color:var(--teal)">+260 XXX XXX XXX</span><br>Account: <span style="color:var(--teal)">Tour de Force Green Initiative</span><br>Reference: <span style="color:var(--sun)">TFGI-DONATION</span>',
+  bank:'🏦 <strong style="color:var(--light)">Bank Transfer:</strong><br>Account: <span style="color:var(--teal)">XXXX-XXXX-XXXX</span><br>Branch: <span style="color:var(--teal)">Livingstone Main</span><br>Reference: <span style="color:var(--sun)">TFGI-DONATION</span>',
+  card:'💳 <strong style="color:var(--light)">Card Payment:</strong><br>Online payments coming soon.<br>Contact <span style="color:var(--teal)">tourdeforce8@gmail.com</span> to arrange.',
+  paypal:'🌐 <strong style="color:var(--light)">PayPal:</strong><br>Send to: <span style="color:var(--teal)">tourdeforce8@gmail.com</span><br>Note: <span style="color:var(--sun)">TFGI Donation</span>'
+};
+function selMethod(el,type){
+  document.querySelectorAll('.method-btn').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');
+  document.getElementById('paymentInfo').innerHTML=payInstructions[type];
+}
+
+/* PORTAL */
+function doLogin(){
+  if(document.getElementById('loginPass').value==='tfgi2024'){
+    document.getElementById('loginArea').style.display='none';
+    document.getElementById('dashArea').style.display='block';
+  }else{alert('Incorrect password. Demo: tfgi2024');}
+}
+function doLogout(){document.getElementById('dashArea').style.display='none';document.getElementById('loginArea').style.display='block';document.getElementById('loginPass').value='';}
+function showPanel(id,el){
+  document.querySelectorAll('.portal-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.portal-nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');el.classList.add('active');
+}
+
+/* ACTIVE NAV */
+const navElement=document.querySelector('nav');
+const navToggle=document.querySelector('.nav-toggle');
+function closeNav(){
+  navElement.classList.remove('open');
+  if(navToggle){
+    navToggle.setAttribute('aria-expanded','false');
+    navToggle.textContent='☰';
+    navToggle.setAttribute('aria-label','Open navigation');
+  }
+}
+navToggle?.addEventListener('click',()=>{
+  const isOpen=navElement.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.textContent=isOpen?'✕':'☰';
+  navToggle.setAttribute('aria-label', isOpen?'Close navigation':'Open navigation');
+});
+document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',closeNav));
+window.addEventListener('resize',()=>{if(window.innerWidth>960){closeNav();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNav();});
+
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY+130;
+  document.querySelectorAll('section[id]').forEach(s=>{
+    if(y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight)
+      document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+s.id));
+  });
+});
+</script>
+</body>
+</html>
