@@ -1,0 +1,11 @@
+{
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "framework": "html",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/tfgi_website_v2.html"
+    }
+  ]
+}
